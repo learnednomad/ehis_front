@@ -87,6 +87,12 @@ export type Provider = {
     policies: string[]; // Add this property
 }
 
+export type ProviderEntry = {
+    provider: Provider;
+    url: string;
+}
+
+
 /******
  * Hospital Exports
  *

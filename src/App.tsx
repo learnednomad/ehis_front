@@ -9,6 +9,7 @@ import ClientList from "./components/clients/ClientList";
 import ProviderList from "./components/providers/ProviderList";
 import HospList from "./components/hospitals/HospList";
 import ClaimsList from "./components/claims/ClaimsList";
+import Login from "./components/Login";
 
 const queryClient = new QueryClient();
 
@@ -29,16 +30,17 @@ function App() {
                         {/*<HeaderComponent/>*/}
                         <div className="container">
                             <Routes>
+                                <Route path="/login"  element={<Login/>} />
                                 <Route path="/client"  element={<ClientList/>} />
                                 <Route path="/provider" element= {<ProviderList/>} />
                                 <Route path="/hospital" element= {<HospList/>} />
                                 <Route path="/claims" element={<ClaimsList/>} />
-
                             </Routes>
                         </div>
                         {/*<FooterComponent/>*/}
                     </div>
                 </Router>
+
             </QueryClientProvider>
         </Container>
     );

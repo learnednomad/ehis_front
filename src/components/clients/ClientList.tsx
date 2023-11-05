@@ -8,10 +8,15 @@ import AddClient from './AddClient';
 import EditClient from "./EditClient";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 
+type CarlistProps = {
+    logOut?: () => void;
+}
 
-function ClientList(){
+function ClientList({ logOut }: CarlistProps){
 
     const [open, setOpen] = useState(false);//show message after deletion
 
@@ -91,7 +96,13 @@ function ClientList(){
             // </table>
 
             <>
-                <AddClient />
+
+                <Stack direction="row" alignItems="center"
+                       justifyContent="space-between">
+                    <AddClient />
+                    <Button onClick={logOut}>Log out</Button>
+                </Stack>
+                {/*<AddClient />*/}
             <DataGrid
                 columns={columns}
                 rows={data}

@@ -34,6 +34,13 @@ export type Client ={
 }
 
 
+
+export type ClientEntry = {
+    client: Client;
+    url: string;
+}
+
+
 /******* Provider Response *********/
 
 
